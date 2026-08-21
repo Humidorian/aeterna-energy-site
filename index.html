@@ -213,6 +213,9 @@ table.cmp .yes{color:var(--amber);font-weight:700}
 .mentor-link svg{flex:none}
 .leadership{background:var(--bg-soft)}
 .group-label{margin-top:56px}
+.group-label{display:flex;justify-content:center;text-align:center}
+.group-label::before{display:none}
+.group-label::after{content:"";width:26px;height:2px;background:var(--amber);border-radius:2px}
 .leadership .mgmt-card,.leadership .mentor-grid{margin-top:18px}
 .mgmt-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;box-shadow:0 6px 20px rgba(10,37,64,.05);display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start}
 .mgmt-avatar{width:76px;height:76px;border-radius:20px;background:linear-gradient(135deg,var(--amber),var(--amber-2));color:#1a1200;font-family:'Sora',sans-serif;font-weight:800;font-size:28px;display:grid;place-items:center;flex:none}
