@@ -64,8 +64,8 @@ section{padding:84px 0}
 .center .sec-label::after{content:"";width:26px;height:2px;background:var(--amber);border-radius:2px}
 /* Full-viewport sections: each main section fills the screen; content is
    vertically centered, and sections simply grow if content exceeds the screen */
-#home,#about,#services,#ppa,#why,#mentors,#process,#calculator,#faq,#contact{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
-#home,#about,#services,#ppa,#why,#mentors,#process,#calculator,#faq,#contact{min-height:100svh}
+#home,#about,#services,#ppa,#why,#leadership,#process,#calculator,#faq,#contact{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
+#home,#about,#services,#ppa,#why,#leadership,#process,#calculator,#faq,#contact{min-height:100svh}
 
 /* ---------- Nav ---------- */
 nav#siteNav{
@@ -196,7 +196,6 @@ table.cmp .yes{color:var(--amber);font-weight:700}
 .why-card p{font-size:14px;color:var(--muted)}
 
 /* ---------- Mentors ---------- */
-.mentors{background:var(--bg-soft)}
 .mentor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
 .mentor-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 6px 20px rgba(10,37,64,.05);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
 .mentor-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
@@ -212,6 +211,13 @@ table.cmp .yes{color:var(--amber);font-weight:700}
 .mentor-link{margin-top:auto;display:inline-flex;align-items:center;gap:9px;color:var(--amber-2);font-weight:700;font-size:13.5px}
 .mentor-link:hover{text-decoration:underline}
 .mentor-link svg{flex:none}
+.leadership{background:var(--bg-soft)}
+.group-label{margin-top:56px}
+.leadership .mgmt-card,.leadership .mentor-grid{margin-top:18px}
+.mgmt-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;box-shadow:0 6px 20px rgba(10,37,64,.05);display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:start}
+.mgmt-avatar{width:76px;height:76px;border-radius:20px;background:linear-gradient(135deg,var(--amber),var(--amber-2));color:#1a1200;font-family:'Sora',sans-serif;font-weight:800;font-size:28px;display:grid;place-items:center;flex:none}
+.mgmt-bio{font-size:15px;color:var(--muted);line-height:1.7;margin:4px 0 20px}
+.mgmt-blocks{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 
 /* ---------- Process ---------- */
 .process{background:var(--bg-soft)}
@@ -322,6 +328,8 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   .form-row{grid-template-columns:1fr}
   .calc-wrap{padding:26px}
   .calc-out{padding:24px}
+  .mgmt-card{grid-template-columns:1fr;gap:18px}
+  .mgmt-blocks{grid-template-columns:1fr}
   .hero{padding:110px 0 70px}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
@@ -352,7 +360,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
-      <li><a href="#mentors">Mentors</a></li>
+      <li><a href="#leadership">Team</a></li>
       <li><a href="#calculator">Savings</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -560,14 +568,21 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   </div>
 </section>
 
-<!-- ============ MENTORS ============ -->
-<section id="mentors" class="mentors">
+<!-- ============ LEADERSHIP ============ -->
+<section id="leadership" class="leadership">
   <div class="container center">
-    <span class="sec-label">Our mentors</span>
-    <h2 class="sec-title">Guided by leaders who built category giants</h2>
-    <p class="sec-sub">Aeterna is mentored by senior operators from global brands across FMCG, energy, technology and private equity — bringing institutional discipline to every plant we build.</p>
+    <span class="sec-label">Leadership</span>
+    <h2 class="sec-title">The people behind Aeterna</h2>
+    <p class="sec-sub">Led by an operator with global corporate experience and guided by mentors who have built category leaders across industries.</p>
   </div>
-  <div class="container mentor-grid" id="mentorsGrid"></div>
+  <div class="container">
+    <span class="sec-label group-label">Management</span>
+    <div class="mgmt-card reveal" id="mgmtCard"></div>
+  </div>
+  <div class="container">
+    <span class="sec-label group-label">Mentors</span>
+    <div class="mentor-grid" id="mentorsGrid"></div>
+  </div>
 </section>
 
 <!-- ============ PROCESS ============ -->
@@ -796,7 +811,14 @@ var SITE = {
     '140+ projects delivered',
     '25-year performance guarantee'
   ],
-  mentors: [                                          // board of mentors (Mentors section)
+  management: {                                        // CEO / management (Leadership section)
+    name: 'Ravi',
+    role: 'CEO',
+    bio: 'An engineer and an MBA from IIM B, Ravi brings years of managerial experience from MNCs such as Honeywell and Akzo Nobel — and has spent the last few years building solar module manufacturing, solar EPC and Energy-as-a-Service businesses.',
+    qualification: ['Engineer', 'MBA — IIM B'],
+    experience: ['Honeywell', 'Akzo Nobel', 'Solar module manufacturing', 'Solar energy consultancy', 'Solar EPC', 'Energy-as-a-Service']
+  },
+  mentors: [                                          // board of mentors (Leadership section)
     { name: 'Rahul Gambhir',
       role: 'Mentor',
       qualification: ['BE — BITS Pilani', 'MBA — IIM B'],
@@ -891,6 +913,20 @@ var SITE = {
     }
     var floatY = document.getElementById('floatYears');
     if (floatY) floatY.textContent = SITE.warrantyYears + ' yrs';
+
+    // management (CEO) card
+    var mgmtEl = document.getElementById('mgmtCard');
+    if (mgmtEl && SITE.management){
+      mgmtEl.innerHTML =
+        '<div class="mgmt-avatar">' + esc((SITE.management.name || 'A').charAt(0)) + '</div>'
+        + '<div class="mgmt-body">'
+        + '<div class="mentor-head"><h3>' + esc(SITE.management.name) + '</h3><span class="mentor-chip">' + esc(SITE.management.role) + '</span></div>'
+        + '<p class="mgmt-bio">' + esc(SITE.management.bio) + '</p>'
+        + '<div class="mgmt-blocks">'
+        + '<div class="mentor-block"><h4>Qualification</h4><ul>' + SITE.management.qualification.map(function(q){ return '<li>' + esc(q) + '</li>'; }).join('') + '</ul></div>'
+        + '<div class="mentor-block"><h4>Experience</h4><ul>' + SITE.management.experience.map(function(e){ return '<li>' + esc(e) + '</li>'; }).join('') + '</ul></div>'
+        + '</div></div>';
+    }
 
     // mentors
     var mentorsEl = document.getElementById('mentorsGrid');
