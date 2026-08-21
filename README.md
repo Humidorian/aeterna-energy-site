@@ -26,16 +26,25 @@ Any static host works. Easiest options:
    domain in cPanel. No PHP, no database needed.
 
 ## Editing
-- **Contact details / phone** — search for `hello@aeternaenergy.in` and
-  `+91 98765 43210` in index.html.
-- **Stats** (35+ MW, 140+ projects …) — the
-  `<b class="counter" data-target="…">` elements.
-- **Calculator assumptions** — `costPerKW`, `55000`, `42000`,
-  `units per kW per day` in the <script> section.
-- **FAQ** — the `faqData` array in the <script> section.
-- **Colors** — the `:root` variables at the top of the <style> block.
-- **Photos** — replace the JPGs in `assets/` with real project photos
-  (same filenames, or update the `src=` in index.html).
+Everything editable lives in **one place**: the `SITE` object at the top of the
+`<script>` block in `index.html` (look for the `SITE DATA` banner comment).
+Change a value there and it updates everywhere it appears — no hunting
+through copies:
+
+- **Brand** — logo text + hero badge tagline
+- **Contact** — email, phone, address, hours, city placeholder (updates the
+  contact cards, footer and enquiry form all at once)
+- **Stats** — counters bar + hero trust badges
+- **Warranty** — years shown on the About image card
+- **Calculator** — cost per kW (residential/commercial), units per kW per
+  day, slider ranges & defaults, caption
+- **FAQ** — the `faq` array (question/answer pairs)
+- **Images** — paths for the 5 photos in `assets/`
+
+Other things to edit in place:
+- **Colors** — the `:root` variables at the top of the `<style>` block.
+- **Marketing copy** — headlines and paragraphs are plain HTML, right where
+  they appear in the page.
 
 ## Notes
 - The enquiry form opens a **pre-filled email** (`mailto:`) — no backend

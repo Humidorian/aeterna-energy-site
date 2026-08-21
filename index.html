@@ -13,6 +13,7 @@
 <meta property="og:title" content="Aeterna Energy — Solar EPC & PPA Company">
 <meta property="og:description" content="Design, build and finance solar plants — cut your electricity costs by up to 40% with zero upfront investment. EPC and PPA across India.">
 <meta property="og:locale" content="en_IN">
+<meta property="og:image" id="ogImage" content="">
 <meta property="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://aeternaenergy.in/">
@@ -63,8 +64,8 @@ section{padding:84px 0}
 .center .sec-label::after{content:"";width:26px;height:2px;background:var(--amber);border-radius:2px}
 /* Full-viewport sections: each main section fills the screen; content is
    vertically centered, and sections simply grow if content exceeds the screen */
-#home,#about,#services,#ppa,#why,#process,#calculator,#faq,#contact{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
-#home,#about,#services,#ppa,#why,#process,#calculator,#faq,#contact{min-height:100svh}
+#home,#about,#services,#ppa,#why,#mentors,#process,#calculator,#faq,#contact{display:flex;flex-direction:column;justify-content:center;min-height:100vh}
+#home,#about,#services,#ppa,#why,#mentors,#process,#calculator,#faq,#contact{min-height:100svh}
 
 /* ---------- Nav ---------- */
 nav#siteNav{
@@ -78,8 +79,8 @@ nav#siteNav.scrolled{
   backdrop-filter:blur(10px);
 }
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 22px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:11px;color:#fff}
-.brand-mark{width:40px;height:40px;flex:none;border-radius:12px;background:linear-gradient(135deg,var(--amber),var(--amber-2));display:grid;place-items:center;box-shadow:0 6px 16px rgba(255,179,0,.35)}
+.brand{display:flex;align-items:center;gap:11px;color:var(--amber);flex:none}
+.brand-mark{width:40px;height:40px;flex:none;display:grid;place-items:center}
 .brand-name{font-family:'Sora',sans-serif;font-weight:700;font-size:19px;letter-spacing:.01em}
 .brand-name em{font-style:normal;color:var(--amber)}
 .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
@@ -90,7 +91,7 @@ nav#siteNav.scrolled{
 .nav-links a.active{color:#fff}
 .nav-links .nav-cta{
   background:linear-gradient(135deg,var(--amber),var(--amber-2));color:#1a1200;
-  font-weight:700;font-size:14px;padding:11px 22px;border-radius:999px;
+  font-weight:700;font-size:14px;padding:11px 22px;border-radius:999px;flex:none;white-space:nowrap;
   box-shadow:0 8px 20px rgba(255,143,31,.35);transition:transform .2s,box-shadow .2s;
 }
 .nav-links .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,143,31,.45)}
@@ -194,6 +195,24 @@ table.cmp .yes{color:var(--amber);font-weight:700}
 .why-card h3{font-size:17.5px;color:var(--navy);margin-bottom:8px}
 .why-card p{font-size:14px;color:var(--muted)}
 
+/* ---------- Mentors ---------- */
+.mentors{background:var(--bg-soft)}
+.mentor-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:46px}
+.mentor-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 6px 20px rgba(10,37,64,.05);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.mentor-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.mentor-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}
+.mentor-head h3{font-size:19px;color:var(--navy);line-height:1.3}
+.mentor-chip{flex:none;background:linear-gradient(135deg,rgba(255,179,0,.16),rgba(255,143,31,.16));color:var(--amber-2);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px;white-space:nowrap}
+.mentor-block{margin-bottom:18px}
+.mentor-block h4{font-family:'Sora',sans-serif;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.mentor-block h4::before{content:"";width:16px;height:2px;background:var(--amber);border-radius:2px}
+.mentor-block ul{list-style:none;display:grid;gap:8px}
+.mentor-block li{font-size:13.5px;color:#3d4c61;display:flex;gap:9px;align-items:flex-start;line-height:1.5}
+.mentor-block li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--amber);margin-top:6px}
+.mentor-link{margin-top:auto;display:inline-flex;align-items:center;gap:9px;color:var(--amber-2);font-weight:700;font-size:13.5px}
+.mentor-link:hover{text-decoration:underline}
+.mentor-link svg{flex:none}
+
 /* ---------- Process ---------- */
 .process{background:var(--bg-soft)}
 .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:52px;counter-reset:step}
@@ -264,7 +283,7 @@ input[type=range]{width:100%;accent-color:var(--amber-2);height:6px;cursor:point
 footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.1fr;gap:40px;padding-bottom:48px}
 .foot-brand p{color:#8fa3b9;font-size:14px;margin-top:16px;max-width:300px}
-.foot-brand .brand{color:#fff;margin-bottom:4px}
+.foot-brand .brand{color:var(--amber);margin-bottom:4px}
 .foot-col h4{color:#fff;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
 .foot-col ul{list-style:none;display:grid;gap:11px}
 .foot-col a{font-size:14px;color:#aabdd2}
@@ -276,16 +295,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
 .reveal.in{opacity:1;transform:none}
 .small-print{font-size:13px;color:var(--muted);margin-top:22px}
 
-@media (max-width:1024px){
-  .epc-grid,.why-grid{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(3,1fr);gap:34px 0}
-  .step::before{display:none}
-  .about-grid,.ppa-grid,.contact-grid,.calc-wrap{grid-template-columns:1fr;gap:40px}
-  .about-img .float-card{left:8px}
-}
-@media (max-width:760px){
-  section{padding:64px 0}
-  .stats-inner{grid-template-columns:repeat(2,1fr);gap:30px}
+@media (max-width:940px){
   .nav-links{position:fixed;top:76px;left:0;right:0;background:var(--navy-2);flex-direction:column;gap:0;padding:10px 0 20px;transform:translateY(-120%);transition:transform .3s;box-shadow:0 16px 30px rgba(0,0,0,.3)}
   .nav-links.open{transform:translateY(0)}
   .nav-links li{width:100%;text-align:center}
@@ -295,7 +305,19 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   .nav-links .nav-cta-wrap{padding-top:8px}
   #menuBtn{display:block}
   .nav-links .nav-cta{display:inline-block;padding:13px 32px}
-  .epc-grid,.why-grid,.steps{grid-template-columns:1fr}
+}
+
+@media (max-width:1024px){
+  .epc-grid,.why-grid,.mentor-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr);gap:34px 0}
+  .step::before{display:none}
+  .about-grid,.ppa-grid,.contact-grid,.calc-wrap{grid-template-columns:1fr;gap:40px}
+  .about-img .float-card{left:8px}
+}
+@media (max-width:760px){
+  section{padding:64px 0}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:30px}
+  .epc-grid,.why-grid,.mentor-grid,.steps{grid-template-columns:1fr}
   .check-list{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .calc-wrap{padding:26px}
@@ -319,9 +341,9 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   <div class="nav-inner">
     <a class="brand" href="#home">
       <span class="brand-mark">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#1a1200"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" stroke="#1a1200" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg width="30" height="30" viewBox="8.5 85.2 183.6 194" xmlns="http://www.w3.org/2000/svg"><path fill="#0cf73d" d="m99.12 267.81c-49.51 0-89.54-38.39-89.54-85.89 0-47.5 40.03-85.89 89.54-85.89 49.51 0 89.54 38.39 89.54 85.89 0 47.5-40.03 85.89-89.54 85.89z"/><path fill="#fffd00" d="m25.68 209.39c15.25-7.65 30.69-15.14 47.05-20.14 9.78-5.9 17.71-17.11 30.02-17.28q6.37-0.77 12.74-1.54 9.56 11.72 19.12 23.45c9.08-0.46 19.21-3.09 26.38 4.56 7.34 3.99 17.3 12.7 23.01 13.79q-0.71-35.51-1.42-71.02-27.41-22.9-54.82-45.81-30.48 4.33-60.96 8.66c-13.25 12.04-27.9 22.95-40.25 35.71q-4.95 25.79-9.89 51.58 4.51 9.02 9.02 18.04z"/><path fill="#0c0bac" d="m92.91 85.24c-43.2 5.76-81.23 42.58-84.44 86.44-1.93 18.74 1.45 37.91 9.18 55.07 8.5 7.9 16.45-3.96 21.41-10.07 7.36-6.76 12.54-20.8 24.86-18.63 7.16 7.71 18.68 6.45 22.39-4.43 4.4-9.12 12.93-22.27 24.9-15.33 8.46 5.78 10.11 17.46 18.64 23.44 9.62 8.5 19.31-11.58 28.12 0.43 8.83 8.88 14.36 22.1 26.29 27.3 12.69 1.24 11.49-15.91 14.99-24.24 9.12-35.79-4.39-76.16-33.82-98.86-19.83-16.04-46.05-23.6-71.44-21.11h-0.55zm12.28 19.53c1.97 4.23-1.48 19.58-0.73 7.6 0.43-2.51 0.91-5.04 0.73-7.6zm20.58 2.99c2.63 4.37-5.01 19.85-6.15 13.15 1.93-4.44 4.74-8.49 6.15-13.15zm-41.71 0.05c1.18 4.14 8.85 16.37 3.98 14.5-2.32-4.43-5.41-9.29-3.98-14.5zm53.55 6.73c-1.47 2.62-9.14 17.52-8.53 9.17 1.88-3.78 4.89-7 8.53-9.17zm-65.21 0.2c6.93-1.9 10.97 18.73 4.36 7.81-1.3-2.69-2.52-5.44-4.36-7.81zm-23.23 8.64c5.15 5.96 19.46 16.07 18.84 19.27-7.45-5.07-14.97-10.91-18.84-19.27zm109.65 1.99c-3.66 5.92-9.15 15.72-16.79 14.81 4.84-5.73 11.12-9.98 16.79-14.81zm-53.25 5.98c3.77 7.01-6.14 6.63 0 0zm-25.42 6.93c6.04 4.92-4.6 6.27 0 0zm49.69 0.11c3.32 7.05-8.68 1.34 0 0zm26.94 5.52c3.12 8.22-17.14 5.63-5.22 2.16 1.78-0.62 3.57-1.24 5.22-2.16zm-103.19 0.07c5.07-1.26 12.24 10.19 3.33 4.37-1.73-0.54-5.18-2.07-3.33-4.37zm54.33 2.65c12.77 3.03 7.41 25.73-5.43 22.55-13.73-3.36-9.37-26.9 5.43-22.55zm-32.1 7.92c10.36-1.27-2.31 7.83 0 0zm57.03 0.06c3.53 5.92-7.68-0.81 0 0zm-97.09 2.55c4.28 2.23 18.84 2.17 16.33 6.52-5.76-0.87-12.87-1-16.33-6.52zm137.35 0.1c-1.42 6.05-17.02 9.18-16.2 4.09 5.35-1.56 10.86-2.49 16.2-4.09zm-104.93 10.64c6.94-1.9-2.36 6.01 0 0zm70.84 0c6.94-1.9-2.36 6.01 0 0zm12.03 7.64c4.75 4.08 20.37-1.38 19.36 3.93-6.53 0.66-14.63 1.78-19.36-3.93zm-92.22 0.7c-5.75 3.72-17.24 6.96-21.81 1.12 7.24-0.85 14.56-0.42 21.81-1.12zm80.19 4.79c8.58 2.36-4.1 7.03 0 0zm-70.84 1.49c6.94-1.9-2.36 6.01 0 0zm-16.04 5.38c2.24 8.84-21.02 6.48-8.07 2.7 2.8-0.45 5.77-0.9 8.07-2.7zm103.72 1.26c4.56-3.99 18.91 7.5 7.21 4.08-2.64-0.87-5.15-2.2-7.21-4.08z"/><path fill="#0c0bac" d="m103.25 189.17c-18.79 22.82-37.58 45.64-56.46 68.39 5.62 9.98 18.62 12.28 28.21 17.13 11.46 2.41 23.19 5.31 34.97 4.18 13.85-0.72 27.89-3.59 39.81-10.91 10.22-1.81 17.61-11.91 6.46-18.33-16.81-19.98-33.56-40.01-49.97-60.31l-1.51-0.08c0 0-1.51-0.07-1.51-0.07zm-0.04 19.93c10.25 4.84 12.07 17.87 19.35 25.78 3.3 7.53 13.42 17.13 12.16 23.64-7.37-5.14-11.37-14.64-17.99-21.04-5.37-4.53-10.9-22-16.52-9.78-8.15 10.24-16.13 20.61-24.6 30.58-3.85-7.85 7.89-14.04 9.92-21.5 5.87-9.24 11.78-18.45 17.68-27.68zm-43.23 0.76c-9.71 11.02-20.37 21.23-29.21 32.99 4.77 12.99 15.73-3.51 19.67-9.14 5.1-6.29 22.32-15.91 9.54-23.85zm87.37 0.57c-9.03 8.31 6.25 15.62 10.15 22.38 6.11 4.29 13.39 22.61 20.66 12.11 0.07-9.87-11.68-13.42-15.96-21.37-4.25-5.05-8.59-10.49-14.85-13.12z"/><path fill="#fffd00" d="m104.79 169.81c-7.06 0-12.76-5.71-12.76-12.76 0-7.06 5.7-12.77 12.76-12.77 7.06 0 12.76 5.71 12.76 12.77 0 7.05-5.7 12.76-12.76 12.76z"/></svg>
       </span>
-      <span class="brand-name">Aeterna<em> Energy</em></span>
+      <span class="brand-name" id="brandName"></span>
     </a>
     <button id="menuBtn" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -330,6 +352,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
+      <li><a href="#mentors">Mentors</a></li>
       <li><a href="#calculator">Savings</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -341,10 +364,10 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
 <!-- ============ HERO ============ -->
 <header class="hero" id="home">
   <div class="hero-bg">
-    <img src="assets/hero.jpg" alt="Solar farm at golden hour">
+    <img id="imgHero" alt="Solar farm at golden hour">
   </div>
   <div class="container hero-inner">
-    <span class="badge">Solar EPC &amp; PPA · Pan-India</span>
+    <span class="badge" id="heroBadge"></span>
     <h1>Power your tomorrow with the <span class="grad">eternal sun.</span></h1>
     <p>Aeterna Energy designs, engineers and finances solar power plants end-to-end — so your business and home can cut electricity costs by up to 40%, with zero upfront investment.</p>
     <div class="hero-ctas">
@@ -354,11 +377,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       </a>
       <a class="btn btn-ghost" href="#calculator">Calculate Your Savings</a>
     </div>
-    <div class="hero-trust">
-      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7z" fill="currentColor"/></svg>35+ MW installed</span>
-      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7z" fill="currentColor"/></svg>140+ projects delivered</span>
-      <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7z" fill="currentColor"/></svg>25-year performance guarantee</span>
-    </div>
+    <div class="hero-trust" id="trustRow"></div>
   </div>
   <div class="scroll-hint" role="button" aria-label="Scroll down">Scroll
     <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -366,23 +385,18 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
 </header>
 
 <!-- ============ STATS ============ -->
-<section class="stats" aria-label="Company statistics">
-  <div class="container stats-inner">
-    <div class="stat"><b class="counter" data-target="35" data-suffix="+">0</b><span>MW installed</span></div>
-    <div class="stat"><b class="counter" data-target="140" data-suffix="+">0</b><span>Projects delivered</span></div>
-    <div class="stat"><b class="counter" data-target="9" data-suffix="">0</b><span>States served</span></div>
-    <div class="stat"><b class="counter" data-target="68000" data-suffix="t">0</b><span>CO₂ offset yearly</span></div>
-  </div>
+<section class="stats" aria-label="Company statistics"style="display: none;">
+  <div class="container stats-inner" id="statsInner"></div>
 </section>
 
 <!-- ============ ABOUT ============ -->
 <section id="about">
   <div class="container about-grid">
     <div class="about-img reveal">
-      <img src="assets/team.jpg" alt="Aeterna engineers installing solar panels">
+      <img id="imgTeam" alt="Aeterna engineers installing solar panels">
       <div class="float-card">
         <svg width="38" height="38" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7z" fill="#ffb300"/></svg>
-        <div><b>25 yrs</b><span>Performance warranty</span></div>
+        <div><b id="floatYears"></b><span>Performance warranty</span></div>
       </div>
     </div>
     <div class="about-text reveal">
@@ -412,7 +426,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   <div class="container epc-grid">
     <div class="epc-card reveal">
       <div class="img">
-        <img src="assets/residential.jpg" alt="Residential rooftop solar">
+        <img id="imgResi" alt="Residential rooftop solar">
         <span class="tag">Residential</span>
       </div>
       <div class="body">
@@ -428,7 +442,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
     </div>
     <div class="epc-card reveal">
       <div class="img">
-        <img src="assets/commercial.jpg" alt="Commercial rooftop solar">
+        <img id="imgCom" alt="Commercial rooftop solar">
         <span class="tag">Commercial &amp; Industrial</span>
       </div>
       <div class="body">
@@ -444,7 +458,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
     </div>
     <div class="epc-card reveal">
       <div class="img">
-        <img src="assets/utility.jpg" alt="Ground mounted solar plant">
+        <img id="imgUtil" alt="Ground mounted solar plant">
         <span class="tag">Utility Scale</span>
       </div>
       <div class="body">
@@ -546,6 +560,16 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   </div>
 </section>
 
+<!-- ============ MENTORS ============ -->
+<section id="mentors" class="mentors">
+  <div class="container center">
+    <span class="sec-label">Our mentors</span>
+    <h2 class="sec-title">Guided by leaders who built category giants</h2>
+    <p class="sec-sub">Aeterna is mentored by senior operators from global brands across FMCG, energy, technology and private equity — bringing institutional discipline to every plant we build.</p>
+  </div>
+  <div class="container mentor-grid" id="mentorsGrid"></div>
+</section>
+
 <!-- ============ PROCESS ============ -->
 <section id="process" class="process">
   <div class="container center">
@@ -575,12 +599,12 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       <div class="field">
         <label for="billInput">Monthly electricity bill (₹)</label>
         <input type="range" id="billInput" min="1000" max="100000" step="500" value="8000">
-        <div class="range-labels"><span>₹1,000</span><span id="billVal">₹8,000</span><span>₹1,00,000</span></div>
+        <div class="range-labels"><span id="billMin">₹1,000</span><span id="billVal">₹8,000</span><span id="billMax">₹1,00,000</span></div>
       </div>
       <div class="field">
         <label for="tariffInput">Grid tariff (₹ per unit)</label>
         <input type="range" id="tariffInput" min="4" max="11" step="0.1" value="7.5">
-        <div class="range-labels"><span>₹4</span><span id="tariffVal">₹7.5</span><span>₹11</span></div>
+        <div class="range-labels"><span id="tariffMin">₹4</span><span id="tariffVal">₹7.5</span><span id="tariffMax">₹11</span></div>
       </div>
       <div class="field">
         <label for="typeInput">Premises type</label>
@@ -592,12 +616,12 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       <div class="field" style="margin-bottom:0">
         <label for="roofInput">Available roof area (sq. ft)</label>
         <input type="range" id="roofInput" min="100" max="5000" step="50" value="600">
-        <div class="range-labels"><span>100</span><span id="roofVal">600 sq ft</span><span>5,000</span></div>
+        <div class="range-labels"><span id="roofMin">100</span><span id="roofVal">600 sq ft</span><span id="roofMax">5,000</span></div>
       </div>
     </div>
     <div class="calc-out">
       <h3>Your estimated solar system</h3>
-      <p class="cap">Based on India-average generation of ~4 units per kW per day</p>
+      <p class="cap" id="calcCap">Based on India-average generation of ~4 units per kW per day</p>
       <div class="co-row"><span>System size</span><b id="cSystem">—</b></div>
       <div class="co-row"><span>Roof space needed</span><b id="cSpace">—</b></div>
       <div class="co-row"><span>Estimated cost (before subsidy)</span><b id="cCost">—</b></div>
@@ -642,19 +666,19 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
     <div class="contact-cards">
       <div class="c-card">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="2"/><path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <div><b>Email us</b><a href="mailto:hello@aeternaenergy.in">hello@aeternaenergy.in</a></div>
+        <div><b>Email us</b><a id="emailCardLink"></a></div>
       </div>
       <div class="c-card">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-        <div><b>Call / WhatsApp</b><a href="tel:+919876543210">+91 98765 43210</a></div>
+        <div><b>Call / WhatsApp</b><a id="phoneCardLink"></a></div>
       </div>
-      <div class="c-card">
+<!--      <div class="c-card">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></span>
-        <div><b>Head office</b><span>#42, 3rd Main, Koramangala,<br>Bengaluru, Karnataka 560034</span></div>
-      </div>
+        <div><b>Head office</b><span id="addressText"></span></div>
+      </div>-->
       <div class="c-card">
         <span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        <div><b>Hours</b><span>Mon–Sat, 9:00 AM – 7:00 PM IST</span></div>
+        <div><b>Hours</b><span id="hoursText"></span></div>
       </div>
     </div>
     <form class="contact-form" id="contactForm">
@@ -662,11 +686,11 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       <p class="cap">Fields marked * are required.</p>
       <div class="form-row">
         <div class="field"><label for="cfName">Full name *</label><input id="cfName" type="text" required placeholder="Your name"></div>
-        <div class="field"><label for="cfPhone">Phone / WhatsApp *</label><input id="cfPhone" type="tel" required placeholder="+91 98765 43210"></div>
+        <div class="field"><label for="cfPhone">Phone / WhatsApp *</label><input id="cfPhone" type="tel" required></div>
       </div>
       <div class="form-row">
         <div class="field"><label for="cfEmail">Email</label><input id="cfEmail" type="email" placeholder="you@example.com"></div>
-        <div class="field"><label for="cfCity">City *</label><input id="cfCity" type="text" required placeholder="Bengaluru"></div>
+        <div class="field"><label for="cfCity">City *</label><input id="cfCity" type="text" required></div>
       </div>
       <div class="form-row">
         <div class="field">
@@ -683,7 +707,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
       </div>
       <div class="field"><label for="cfMsg">Anything else we should know?</label><textarea id="cfMsg" placeholder="Roof type, current bill concerns, timeline…"></textarea></div>
       <button class="btn btn-amber" type="submit" style="width:100%;justify-content:center">Send enquiry</button>
-      <div class="form-success" id="formSuccess">Thanks! Your enquiry is ready — your email app just opened with everything pre-filled. Prefer to type it yourself? Write to <b>hello@aeternaenergy.in</b></div>
+      <div class="form-success" id="formSuccess">Thanks! Your enquiry is ready — your email app just opened with everything pre-filled. Prefer to type it yourself? Write to <b id="successEmail"></b></div>
     </form>
   </div>
 </section>
@@ -694,9 +718,9 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
     <div class="foot-brand">
       <a class="brand" href="#home">
         <span class="brand-mark">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" fill="#1a1200"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" stroke="#1a1200" stroke-width="2" stroke-linecap="round"/></svg>
+          <svg width="30" height="30" viewBox="8.5 85.2 183.6 194" xmlns="http://www.w3.org/2000/svg"><path fill="#0cf73d" d="m99.12 267.81c-49.51 0-89.54-38.39-89.54-85.89 0-47.5 40.03-85.89 89.54-85.89 49.51 0 89.54 38.39 89.54 85.89 0 47.5-40.03 85.89-89.54 85.89z"/><path fill="#fffd00" d="m25.68 209.39c15.25-7.65 30.69-15.14 47.05-20.14 9.78-5.9 17.71-17.11 30.02-17.28q6.37-0.77 12.74-1.54 9.56 11.72 19.12 23.45c9.08-0.46 19.21-3.09 26.38 4.56 7.34 3.99 17.3 12.7 23.01 13.79q-0.71-35.51-1.42-71.02-27.41-22.9-54.82-45.81-30.48 4.33-60.96 8.66c-13.25 12.04-27.9 22.95-40.25 35.71q-4.95 25.79-9.89 51.58 4.51 9.02 9.02 18.04z"/><path fill="#0c0bac" d="m92.91 85.24c-43.2 5.76-81.23 42.58-84.44 86.44-1.93 18.74 1.45 37.91 9.18 55.07 8.5 7.9 16.45-3.96 21.41-10.07 7.36-6.76 12.54-20.8 24.86-18.63 7.16 7.71 18.68 6.45 22.39-4.43 4.4-9.12 12.93-22.27 24.9-15.33 8.46 5.78 10.11 17.46 18.64 23.44 9.62 8.5 19.31-11.58 28.12 0.43 8.83 8.88 14.36 22.1 26.29 27.3 12.69 1.24 11.49-15.91 14.99-24.24 9.12-35.79-4.39-76.16-33.82-98.86-19.83-16.04-46.05-23.6-71.44-21.11h-0.55zm12.28 19.53c1.97 4.23-1.48 19.58-0.73 7.6 0.43-2.51 0.91-5.04 0.73-7.6zm20.58 2.99c2.63 4.37-5.01 19.85-6.15 13.15 1.93-4.44 4.74-8.49 6.15-13.15zm-41.71 0.05c1.18 4.14 8.85 16.37 3.98 14.5-2.32-4.43-5.41-9.29-3.98-14.5zm53.55 6.73c-1.47 2.62-9.14 17.52-8.53 9.17 1.88-3.78 4.89-7 8.53-9.17zm-65.21 0.2c6.93-1.9 10.97 18.73 4.36 7.81-1.3-2.69-2.52-5.44-4.36-7.81zm-23.23 8.64c5.15 5.96 19.46 16.07 18.84 19.27-7.45-5.07-14.97-10.91-18.84-19.27zm109.65 1.99c-3.66 5.92-9.15 15.72-16.79 14.81 4.84-5.73 11.12-9.98 16.79-14.81zm-53.25 5.98c3.77 7.01-6.14 6.63 0 0zm-25.42 6.93c6.04 4.92-4.6 6.27 0 0zm49.69 0.11c3.32 7.05-8.68 1.34 0 0zm26.94 5.52c3.12 8.22-17.14 5.63-5.22 2.16 1.78-0.62 3.57-1.24 5.22-2.16zm-103.19 0.07c5.07-1.26 12.24 10.19 3.33 4.37-1.73-0.54-5.18-2.07-3.33-4.37zm54.33 2.65c12.77 3.03 7.41 25.73-5.43 22.55-13.73-3.36-9.37-26.9 5.43-22.55zm-32.1 7.92c10.36-1.27-2.31 7.83 0 0zm57.03 0.06c3.53 5.92-7.68-0.81 0 0zm-97.09 2.55c4.28 2.23 18.84 2.17 16.33 6.52-5.76-0.87-12.87-1-16.33-6.52zm137.35 0.1c-1.42 6.05-17.02 9.18-16.2 4.09 5.35-1.56 10.86-2.49 16.2-4.09zm-104.93 10.64c6.94-1.9-2.36 6.01 0 0zm70.84 0c6.94-1.9-2.36 6.01 0 0zm12.03 7.64c4.75 4.08 20.37-1.38 19.36 3.93-6.53 0.66-14.63 1.78-19.36-3.93zm-92.22 0.7c-5.75 3.72-17.24 6.96-21.81 1.12 7.24-0.85 14.56-0.42 21.81-1.12zm80.19 4.79c8.58 2.36-4.1 7.03 0 0zm-70.84 1.49c6.94-1.9-2.36 6.01 0 0zm-16.04 5.38c2.24 8.84-21.02 6.48-8.07 2.7 2.8-0.45 5.77-0.9 8.07-2.7zm103.72 1.26c4.56-3.99 18.91 7.5 7.21 4.08-2.64-0.87-5.15-2.2-7.21-4.08z"/><path fill="#0c0bac" d="m103.25 189.17c-18.79 22.82-37.58 45.64-56.46 68.39 5.62 9.98 18.62 12.28 28.21 17.13 11.46 2.41 23.19 5.31 34.97 4.18 13.85-0.72 27.89-3.59 39.81-10.91 10.22-1.81 17.61-11.91 6.46-18.33-16.81-19.98-33.56-40.01-49.97-60.31l-1.51-0.08c0 0-1.51-0.07-1.51-0.07zm-0.04 19.93c10.25 4.84 12.07 17.87 19.35 25.78 3.3 7.53 13.42 17.13 12.16 23.64-7.37-5.14-11.37-14.64-17.99-21.04-5.37-4.53-10.9-22-16.52-9.78-8.15 10.24-16.13 20.61-24.6 30.58-3.85-7.85 7.89-14.04 9.92-21.5 5.87-9.24 11.78-18.45 17.68-27.68zm-43.23 0.76c-9.71 11.02-20.37 21.23-29.21 32.99 4.77 12.99 15.73-3.51 19.67-9.14 5.1-6.29 22.32-15.91 9.54-23.85zm87.37 0.57c-9.03 8.31 6.25 15.62 10.15 22.38 6.11 4.29 13.39 22.61 20.66 12.11 0.07-9.87-11.68-13.42-15.96-21.37-4.25-5.05-8.59-10.49-14.85-13.12z"/><path fill="#fffd00" d="m104.79 169.81c-7.06 0-12.76-5.71-12.76-12.76 0-7.06 5.7-12.77 12.76-12.77 7.06 0 12.76 5.71 12.76 12.77 0 7.05-5.7 12.76-12.76 12.76z"/></svg>
         </span>
-        <span class="brand-name">Aeterna<em> Energy</em></span>
+        <span class="brand-name" id="brandNameFooter"></span>
       </a>
       <p>Solar EPC and PPA company building eternal power for homes and businesses across India.</p>
     </div>
@@ -723,8 +747,8 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
     <div class="foot-col">
       <h4>Get in touch</h4>
       <ul>
-        <li><a href="mailto:hello@aeternaenergy.in">hello@aeternaenergy.in</a></li>
-        <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+        <li><a id="emailFooter"></a></li>
+        <li><a id="phoneFooter"></a></li>
         <li><a href="#contact">Book a free assessment</a></li>
       </ul>
     </div>
@@ -735,7 +759,201 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   </div>
 </footer>
 <script>
+/* ====================================================================
+   SITE DATA — single source of truth
+   Edit any value below and the whole site updates automatically.
+   (Colors live in the :root block at the top of the <style> section.)
+   ==================================================================== */
+var SITE = {
+  meta: {
+    title: 'Aeterna Energy — Solar EPC & PPA Company',
+    description: 'Aeterna Energy is a full-service solar EPC and PPA company delivering residential, commercial and utility-scale solar power plants across India — engineering, procurement, construction, and zero-investment power purchase agreements.',
+    url: 'https://aeternaenergy.in'
+  },
+  brand: {
+    name: 'Aeterna',                                  // main logo text
+    accent: ' Energy',                                // highlighted (amber) part of the logo
+    tagline: 'Solar EPC & PPA · Pan-India'            // badge under the hero heading
+  },
+  contact: {
+    email: 'sphoorthy@aeternaenergy.in',
+    phone: '+91 98492 52991',                         // as shown on the site
+    phoneHref: '+919849252991',                       // digits only, used in tel: links
+    //address: ['#42, 3rd Main, Koramangala,',          // one entry per line of the address
+    //          'Bengaluru, Karnataka 560034'],
+    hours: 'Mon–Sat, 9:00 AM – 7:00 PM IST',
+    cityPlaceholder: 'Hyderabad'                      // enquiry form placeholder
+  },
+  warrantyYears: 25,                                  // shown on the About image card
+  stats: [                                            // counters bar under the hero
+    { value: 35,    suffix: '+', label: 'MW installed' },
+    { value: 140,   suffix: '+', label: 'Projects delivered' },
+    { value: 9,     suffix: '',  label: 'States served' },
+    { value: 68000, suffix: 't', label: 'CO₂ offset yearly' }
+  ],
+  trust: [                                            // hero star badges
+    '35+ MW installed',
+    '140+ projects delivered',
+    '25-year performance guarantee'
+  ],
+  mentors: [                                          // board of mentors (Mentors section)
+    { name: 'Rahul Gambhir',
+      role: 'Mentor',
+      qualification: ['BE — BITS Pilani', 'MBA — IIM B'],
+      experience: ['Country Head — Red Bull', 'Country Head — Tommy Hilfiger', 'MD — Twinings', 'Country Head — Monster Inc'],
+      linkedin: 'https://www.linkedin.com/in/rahulgambhir/?originalSubdomain=in' },
+    { name: 'S Partha Sarathy',
+      role: 'Mentor',
+      qualification: ['BE', 'MBA — IIM B'],
+      experience: ['Chief Program Officer — Executive Education, IIM B', 'Author'],
+      linkedin: 'https://www.linkedin.com/in/parthasarathys-iimb/' },
+    { name: 'K V Rama Krishna',
+      role: 'Mentor',
+      qualification: ['BE', 'MBA — IIM B'],
+      experience: ['Senior Associate — Carlyle Group', 'CEO — Kotak Private Equity', 'Advisor — Pontaq, Xcelerate', 'MD — Broad Peak Capital Advisors LLP'],
+      linkedin: 'https://www.linkedin.com/in/ramakrishna-kv-31282a/details/experience/' }
+  ],
+  calc: {                                             // savings calculator
+    costPerKW: { residential: 55000, commercial: 42000 }, // ₹ per kW installed
+    unitsPerKWPerDay: 4,                              // average daily generation per kW
+    bill:   { min: 1000,  max: 100000, step: 500, def: 8000 },
+    tariff: { min: 4,     max: 11,     step: 0.1, def: 7.5 },
+    roof:   { min: 100,   max: 5000,   step: 50,  def: 600 },
+    caption: 'Based on India-average generation of ~4 units per kW per day'
+  },
+  faq: [
+    {q: 'What is the difference between EPC and PPA?',
+     a: 'EPC (Engineering, Procurement, Construction) means you own the solar plant — we design, build and commission it for a fixed price. Under a PPA (Power Purchase Agreement), we build and own the plant on your premises and you only pay for the electricity it generates, at a tariff below your grid rate, for 25 years. With EPC you save the most over time; with PPA you save instantly with zero investment.'},
+    {q: 'How long does installation take?',
+     a: 'A typical residential or commercial rooftop system is installed and commissioned within 3–6 weeks from the completed site survey, depending on approvals and net-metering timelines. Utility-scale plants take longer and are scheduled with you.'},
+    {q: 'How much roof space do I need?',
+     a: 'Roughly 75–100 square feet per kW of installed capacity. A typical 3 kW home system needs about 250–300 sq ft of clear, unshaded roof. Our engineers do a shadow analysis during the free site assessment to confirm the exact usable area.'},
+    {q: 'What if my roof gets shaded or doesn\u0027t face south?',
+     a: 'Modern panels tolerate east–west orientations and partial shading better than ever, and our design stage models your exact roof geometry. We only recommend a system if it will deliver strong, reliable generation — and we show you the projected output before you commit.'},
+    {q: 'What warranties and guarantees do you provide?',
+     a: 'Panels carry 25-year performance warranties and 10–12 year product warranties; inverters typically 5–10 years. Our EPC agreement guarantees the plant\u0027s generation output, and our PPA keeps performance risk with us for the full 25-year term.'},
+    {q: 'How does net metering work?',
+     a: 'With net metering, your meter runs backwards when your plant generates more than you consume, and your DISCOM credits it against what you draw from the grid. We handle the entire net-metering application and approvals as part of our EPC scope. Availability and rules vary by state.'},
+    {q: 'Can I really switch to solar with zero upfront cost?',
+     a: 'Yes — that is exactly what our PPA model does. Aeterna Energy finances, builds, owns and maintains the plant. You sign a 25-year power purchase agreement and start paying a lower fixed tariff the day the plant is commissioned. No loans, no EMIs, no capital outlay.'}
+  ],
+  images: {                                           // photo paths (see assets/)
+    hero:        'assets/hero.jpg',
+    team:        'assets/team.jpg',
+    residential: 'assets/residential.jpg',
+    commercial:  'assets/commercial.jpg',
+    utility:     'assets/utility.jpg'
+  }
+};
 (function(){
+  /* ---- Push SITE data into the page (single source of truth) ---- */
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function applyConfig(){
+    // brand (nav + footer) and hero badge
+    ['brandName','brandNameFooter'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = esc(SITE.brand.name) + '<em>' + esc(SITE.brand.accent) + '</em>';
+    });
+    var badge = document.getElementById('heroBadge');
+    if (badge) badge.textContent = SITE.brand.tagline;
+
+    // contact
+    var emailLink = document.getElementById('emailCardLink');
+    if (emailLink){ emailLink.href = 'mailto:' + SITE.contact.email; emailLink.textContent = SITE.contact.email; }
+    var emailFoot = document.getElementById('emailFooter');
+    if (emailFoot){ emailFoot.href = 'mailto:' + SITE.contact.email; emailFoot.textContent = SITE.contact.email; }
+    var succEm = document.getElementById('successEmail');
+    if (succEm) succEm.textContent = SITE.contact.email;
+    var phoneLink = document.getElementById('phoneCardLink');
+    if (phoneLink){ phoneLink.href = 'tel:' + SITE.contact.phoneHref; phoneLink.textContent = SITE.contact.phone; }
+    var phoneFoot = document.getElementById('phoneFooter');
+    if (phoneFoot){ phoneFoot.href = 'tel:' + SITE.contact.phoneHref; phoneFoot.textContent = SITE.contact.phone; }
+    var addr = document.getElementById('addressText');
+    if (addr) addr.innerHTML = SITE.contact.address.map(esc).join('<br>');
+    var hrs = document.getElementById('hoursText');
+    if (hrs) hrs.textContent = SITE.contact.hours;
+    var cfPhone = document.getElementById('cfPhone');
+    if (cfPhone) cfPhone.placeholder = SITE.contact.phone;
+    var cfCity = document.getElementById('cfCity');
+    if (cfCity) cfCity.placeholder = SITE.contact.cityPlaceholder;
+
+    // stats bar + hero trust row
+    var statsEl = document.getElementById('statsInner');
+    if (statsEl){
+      statsEl.innerHTML = SITE.stats.map(function(s){
+        return '<div class="stat"><b class="counter" data-target="' + esc(s.value) + '" data-suffix="' + esc(s.suffix) + '">0</b><span>' + esc(s.label) + '</span></div>';
+      }).join('');
+    }
+    var trustEl = document.getElementById('trustRow');
+    if (trustEl){
+      var star = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.6 7.1.7-5.4 4.8 1.6 7L12 17.5 5.8 21l1.6-7L2 9.3l7.1-.7z" fill="currentColor"/></svg>';
+      trustEl.innerHTML = SITE.trust.map(function(t){ return '<span>' + star + esc(t) + '</span>'; }).join('');
+    }
+    var floatY = document.getElementById('floatYears');
+    if (floatY) floatY.textContent = SITE.warrantyYears + ' yrs';
+
+    // mentors
+    var mentorsEl = document.getElementById('mentorsGrid');
+    if (mentorsEl && SITE.mentors){
+      var inSvg = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>';
+      mentorsEl.innerHTML = SITE.mentors.map(function(m){
+        return '<div class="mentor-card reveal">'
+          + '<div class="mentor-head"><h3>' + esc(m.name) + '</h3><span class="mentor-chip">' + esc(m.role) + '</span></div>'
+          + '<div class="mentor-block"><h4>Qualification</h4><ul>' + m.qualification.map(function(q){ return '<li>' + esc(q) + '</li>'; }).join('') + '</ul></div>'
+          + '<div class="mentor-block"><h4>Experience</h4><ul>' + m.experience.map(function(e){ return '<li>' + esc(e) + '</li>'; }).join('') + '</ul></div>'
+          + '<a class="mentor-link" href="' + esc(m.linkedin) + '" target="_blank" rel="noopener">' + inSvg + 'View LinkedIn profile</a>'
+          + '</div>';
+      }).join('');
+    }
+
+    // calculator sliders, labels and caption
+    var sliderCfg = { billInput: SITE.calc.bill, tariffInput: SITE.calc.tariff, roofInput: SITE.calc.roof };
+    Object.keys(sliderCfg).forEach(function(id){
+      var el = document.getElementById(id), cfg = sliderCfg[id];
+      if (el && cfg){ el.min = cfg.min; el.max = cfg.max; el.step = cfg.step; el.value = cfg.def; }
+    });
+    var labelCfg = {
+      billMin:   '₹' + SITE.calc.bill.min.toLocaleString('en-IN'),
+      billMax:   '₹' + SITE.calc.bill.max.toLocaleString('en-IN'),
+      tariffMin: '₹' + SITE.calc.tariff.min,
+      tariffMax: '₹' + SITE.calc.tariff.max,
+      roofMin:   SITE.calc.roof.min.toLocaleString('en-IN'),
+      roofMax:   SITE.calc.roof.max.toLocaleString('en-IN')
+    };
+    Object.keys(labelCfg).forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.textContent = labelCfg[id];
+    });
+    var cap = document.getElementById('calcCap');
+    if (cap) cap.textContent = SITE.calc.caption;
+
+    // images
+    var imgCfg = {
+      imgHero: SITE.images.hero, imgTeam: SITE.images.team,
+      imgResi: SITE.images.residential, imgCom: SITE.images.commercial,
+      imgUtil: SITE.images.utility
+    };
+    Object.keys(imgCfg).forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.src = imgCfg[id];
+    });
+
+    // page title / description / og tags
+    document.title = SITE.meta.title;
+    var setMeta = function(selector, value){
+      var m = document.querySelector(selector);
+      if (m) m.setAttribute('content', value);
+    };
+    setMeta('meta[name="description"]', SITE.meta.description);
+    setMeta('meta[property="og:title"]', SITE.meta.title);
+    setMeta('meta[property="og:description"]', SITE.meta.description);
+    setMeta('meta[name="author"]', SITE.brand.name + SITE.brand.accent);
+    setMeta('meta[property="og:site_name"]', SITE.brand.name + SITE.brand.accent);
+    var ogImg = document.getElementById('ogImage');
+    if (ogImg) ogImg.setAttribute('content', SITE.meta.url.replace(/\/+$/, '') + '/' + SITE.images.hero);
+  }
+  applyConfig();
+
   var menuBtn = document.getElementById('menuBtn');
   var navLinks = document.getElementById('navLinks');
   var nav = document.getElementById('siteNav');
@@ -847,14 +1065,14 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
 
     var unitsPerMonth = bill / tariff;
     var unitsPerDay = unitsPerMonth / 30;
-    var kW = Math.max(1, Math.ceil((unitsPerDay / 4) * 2) / 2);
+    var kW = Math.max(1, Math.ceil((unitsPerDay / SITE.calc.unitsPerKWPerDay) * 2) / 2);
     var space = Math.min(roof, Math.round(kW * 75));
     if (roof < space) kW = Math.max(1, Math.round(roof / 75));
     space = Math.round(kW * 75);
 
-    var costPerKW = isCom ? 42000 : 55000;
+    var costPerKW = SITE.calc.costPerKW[isCom ? 'commercial' : 'residential'];
     var cost = kW * costPerKW;
-    var annualGen = kW * 4 * 365;
+    var annualGen = kW * SITE.calc.unitsPerKWPerDay * 365;
     var annualSaving = annualGen * tariff;
     var payback = cost / annualSaving;
     var lifetime = annualSaving * 25;
@@ -873,25 +1091,8 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
   typeInput.addEventListener('change', calc);
   calc();
 
-  var faqData = [
-    {q: 'What is the difference between EPC and PPA?',
-     a: 'EPC (Engineering, Procurement, Construction) means you own the solar plant — we design, build and commission it for a fixed price. Under a PPA (Power Purchase Agreement), we build and own the plant on your premises and you only pay for the electricity it generates, at a tariff below your grid rate, for 25 years. With EPC you save the most over time; with PPA you save instantly with zero investment.'},
-    {q: 'How long does installation take?',
-     a: 'A typical residential or commercial rooftop system is installed and commissioned within 3–6 weeks from the completed site survey, depending on approvals and net-metering timelines. Utility-scale plants take longer and are scheduled with you.'},
-    {q: 'How much roof space do I need?',
-     a: 'Roughly 75–100 square feet per kW of installed capacity. A typical 3 kW home system needs about 250–300 sq ft of clear, unshaded roof. Our engineers do a shadow analysis during the free site assessment to confirm the exact usable area.'},
-    {q: 'What if my roof gets shaded or doesn\u0027t face south?',
-     a: 'Modern panels tolerate east–west orientations and partial shading better than ever, and our design stage models your exact roof geometry. We only recommend a system if it will deliver strong, reliable generation — and we show you the projected output before you commit.'},
-    {q: 'What warranties and guarantees do you provide?',
-     a: 'Panels carry 25-year performance warranties and 10–12 year product warranties; inverters typically 5–10 years. Our EPC agreement guarantees the plant\u0027s generation output, and our PPA keeps performance risk with us for the full 25-year term.'},
-    {q: 'How does net metering work?',
-     a: 'With net metering, your meter runs backwards when your plant generates more than you consume, and your DISCOM credits it against what you draw from the grid. We handle the entire net-metering application and approvals as part of our EPC scope. Availability and rules vary by state.'},
-    {q: 'Can I really switch to solar with zero upfront cost?',
-     a: 'Yes — that is exactly what our PPA model does. Aeterna Energy finances, builds, owns and maintains the plant. You sign a 25-year power purchase agreement and start paying a lower fixed tariff the day the plant is commissioned. No loans, no EMIs, no capital outlay.'}
-  ];
-
   var faqList = document.getElementById('faqList');
-  faqData.forEach(function(item, i){
+  SITE.faq.forEach(function(item, i){
     var wrap = document.createElement('div');
     wrap.className = 'faq-item';
     var btn = document.createElement('button');
@@ -947,7 +1148,7 @@ footer{background:var(--navy-2);color:#b9c9dc;padding:64px 0 0}
     var subject = encodeURIComponent('Solar assessment enquiry — ' + name + ' (' + city + ')');
     var body = encodeURIComponent(lines.filter(function(l){ return l !== ''; }).join('\n'));
     var link = document.createElement('a');
-    link.href = 'mailto:hello@aeternaenergy.in?subject=' + subject + '&body=' + body;
+    link.href = 'mailto:' + SITE.contact.email + '?subject=' + subject + '&body=' + body;
     link.target = '_blank';
     link.click();
     document.getElementById('formSuccess').classList.add('show');
